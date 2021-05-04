@@ -13,6 +13,7 @@ body {
 }
 
 header {
+  z-index: 3;
   position: fixed;
   width: 100%;
   top: 0;
@@ -74,26 +75,89 @@ header {
   width: 100%;
   display: flex;
   height: 100hv;
-  div.test {
-    background-color: bisque;
+  margin-bottom: 81px;
+  img {
     width: 50%;
     height: 80vh;
   }
   .hero__content {
+    background-color: bisque;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
-    row-gap: 10px;
+    h4 {
+      margin-bottom: 19px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
     h3 {
       width: 55%;
+      font-size: 30px;
+      margin-bottom: 63px;
+    }
+    a {
+      text-decoration: none;
+      display: flex;
+      color: black;
+      .content {
+        text-transform: uppercase;
+        font-size: 12px;
+        border: 1px solid black;
+        padding: 20px 80px;
+      }
+      .Icon {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        border-right: 1px solid black;
+        padding: 10px;
+      }
+      &:hover {
+        background-color: black;
+        color: white;
+        fill: white;
+      }
     }
   }
 }
 .blog {
-  background-color: aqua;
-  width: 50%;
-  height: 100vh;
+  background-color: bisque;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 60vh);
+  .blog__post {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // img {
+    //   height: 100%;
+    //   width: 100%;
+    //   object-fit: cover;
+    // }
+    .crop {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      img {
+        z-index: 1;
+        position: absolute;
+      }
+    }
+    .post__content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    &:nth-child(even) {
+      .post__content {
+        order: -1;
+      }
+    }
+  }
 }
