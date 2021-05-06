@@ -128,6 +128,7 @@ header {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 60vh);
+  margin-bottom: 82px;
   .blog__post {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -161,6 +162,24 @@ header {
       .post__content {
         order: -1;
       }
+    }
+  }
+}
+
+.gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 35vh);
+  .gallery__poster {
+    z-index: 12;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    img {
+      position: absolute;
     }
   }
 }
